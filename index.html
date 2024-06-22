@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relazione PCTO Luca Fiorini</title>
+  
+  <!-- Google fonts import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  
+  <style>
+    body{
+      background-color: black;
+      color: white;
+      font-family:"Roboto",sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      padding: 1em;
+    }
+
+    h2 {
+      padding: 0.5em;
+    }
+    h1,h2,h3,h4,h5,h6 {
+      text-shadow: 0px 0px 5px rgb(140, 139, 139);
+    }
+
+    hr {
+      padding: 0px;
+      margin: 0px;
+      width: 100%;
+      border-color: white;
+      box-shadow: 0px 0px 5px rgb(140, 139, 139);
+    }
+
+    /*
+    .timeline::before{
+      content:'';
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      width: 20%;
+      border-right: solid white;
+    }
+    */
+    .timeline {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .timeline > .section {
+      display: flex;
+      width: 100%;
+    }
+    
+    /*
+    .timeline > .section::before {
+      content:'';
+      position: relative;
+      left: -12px;
+      background-color: black;
+      width: 20px;
+      height: 20px;
+      margin:auto;
+      border: solid white 2px;
+      border-radius: 200px;
+    }
+    */
+
+    .timeline > .section > .date {
+      display: flex;
+      width: 20%;
+      height: 100%;
+      border-right: solid white 2px;
+    }
+
+    .timeline > .section > .date > p{
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+      margin-right: 1em;
+    }
+
+    .timeline > .section::after{
+      content:'';
+      position: relative;
+      left: -20%;
+      background-color: black;
+      width: 20px;
+      height: 20px;
+      margin:auto;
+      border: solid white 2px;
+      border-radius: 200px;
+    }
+
+    .timeline > .section > .img {
+      width: 20%;
+    }
+
+    .timeline > .section > .img > img {
+      width: 100%;
+      aspect-ratio: 16/9;
+    }
+
+    .timeline > .section > .title {
+      width: 60%;
+      text-align: left;
+      padding: 1em;
+
+    }
+
+  </style>
+
+</head>
+<body>
+  <h1> La mia esperienza PCTO </h1>
+  <hr>
+  <div class="timeline">
+    <div class="section" id="Corso sulla sicurezza">
+      <div class="date"><p>16/9/2009</p></div>
+      <div class="img"><img alt="img"></div>
+      <h2 class="title">Corso sulla Sicurezza</h2>
+    </div>
+  </div>
+</body>
+</html>
