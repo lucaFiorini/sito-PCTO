@@ -57,6 +57,10 @@
       flex-direction: column;
       transition: background-color 0.5s ease-in-out;
       border-radius: 5px;
+      cursor:pointer;
+      border-bottom: rgba(255, 255, 255, 0.097) solid 1px;
+      padding-bottom: 1em;
+      margin-bottom:1em;
     }
 
     @keyframes my-highlight{
@@ -282,8 +286,7 @@
 
       //if present, remove so animation can be played again
       elem.classList.remove('clicked')
-      elem.style.animation.cancel();
-      
+
       elem.classList.add('clicked')
       setTimeout((elem) => {
         elem.classList.remove('clicked') //after animation is finished remove
