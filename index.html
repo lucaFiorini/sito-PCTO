@@ -19,7 +19,7 @@
     }
 
     h1 {
-      padding: 1em;
+      padding: 0.6em;
     }
 
     h2 {
@@ -37,81 +37,188 @@
       box-shadow: 0px 0px 5px rgb(140, 139, 139);
     }
 
-    /*
-    .timeline::before{
-      content:'';
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      width: 20%;
-      border-right: solid white;
-    }
-    */
     .timeline {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       width: 100%;
+      height: 100%;
     }
 
     .timeline > .section {
+      position: relative;
       display: flex;
       width: 100%;
     }
     
-    /*
-    .timeline > .section::before {
-      content:'';
+    .timeline > .section > .article {
       position: relative;
-      left: -12px;
-      background-color: black;
-      width: 20px;
-      height: 20px;
-      margin:auto;
-      border: solid white 2px;
-      border-radius: 200px;
-    }
-    */
-
-    .timeline > .section > .date {
       display: flex;
-      width: 20%;
-      height: 100%;
-      border-right: solid white 2px;
+      width: 70%;
+      flex-direction: column;
+      transition: background-color 0.5s ease-in-out;
+      border-radius: 5px;
     }
 
-    .timeline > .section > .date > p{
-      margin-top: auto;
-      margin-bottom: auto;
-      margin-left: auto;
-      margin-right: 1em;
+    @keyframes my-highlight{
+      0%{
+        background-color: rgba(255, 255, 255, 0);
+      }
+      50% {
+        background-color: rgba(255, 255, 255, 0.305);
+      }
+      100% {
+        background-color: rgba(255, 255, 255, 0);
+      }
     }
 
-    .timeline > .section::after{
-      content:'';
+    .timeline > .section > .article.clicked {
+      animation: my-highlight linear 0.5s forwards;
+    }
+
+    .timeline > .section > .article > .heading {
       position: relative;
-      left: -20%;
-      background-color: black;
-      width: 20px;
+      display: flex;
+      width: 100%;
+      height: 6em;
+    }
+
+    .timeline >  .section > .timebar {
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+      width: 30%;
+      border-right: solid white 2px;
+      position: relative;
+    }
+
+    .timeline >  .section > .timebar > .date {
+      width: 100%;
+      height: 6em;
+      padding: 0px 1em;
+      margin: 0px;
+      line-height: 6em;
+      text-align: right;
+    }
+
+    /*Timeline dot*/
+    .timeline > .section::after{
+      display: flex;
+      content:'';
+      position: absolute;
       height: 20px;
-      margin:auto;
+      width: 20px;
+      background-color: black;
       border: solid white 2px;
       border-radius: 200px;
+      top:2.5em;
+      margin-top: -2px;
+      left:30%;
+      margin-left: -12px;
     }
 
-    .timeline > .section > .img {
-      width: 20%;
+    .timeline >  .section > .article > .heading > .img {
+      width: 50%;
+      display: flex;
+      vertical-align: middle;
     }
 
-    .timeline > .section > .img > img {
+    .timeline >  .section > .article > .heading > .img > img {
       width: 100%;
       aspect-ratio: 16/9;
+      margin: auto;
+      background-color: rgb(15, 47, 74);
+      border-radius: 5px;
+
     }
 
-    .timeline > .section > .title {
-      width: 60%;
-      text-align: left;
-      padding: 1em;
+    @media only screen and (min-width: 500px){
+      .timeline >  .section > .article > .heading > .img > img {
+        width: unset;
+        height: 100%;
+      }
+    }
 
+    .timeline >  .section > .article > .heading > .title {
+      width: 50%;
+      text-align: left;
+      padding:0.1em 0.1em 0px 0px;
+      margin:auto 0px auto 0px;
+      padding-left: 0.5em;
+    }
+
+    .timeline > .section > .article > .content > div > p {
+      margin:auto
+    }
+
+
+    .timeline > .section > .article > .content {
+      max-height: 2lh;
+      width: 90%;
+      transition: max-height 1.5s ease-in-out;
+    }
+
+    .timeline > .section > .article > .content.expanded {
+      max-height:200px;
+      overflow: hidden;
+    }
+
+    .timeline > .section > .article > .content > div {
+      
+      text-align: left;
+      padding: 0.1em;
+      margin: auto;
+      transition: max-height 1.5s ease-in-out;
+      overflow: hidden;
+      text-overflow: clip;
+      max-height: 100%;
+      
+     }
+
+    /* text fade out */
+    .timeline > .section > .article > .content::before {
+
+      opacity: 0%;
+      transition: opacity 1.5s ease-in-out;
+      content:'';
+      width:100%;
+      height:100%;    
+      position:absolute;
+      left:0;
+      top:0;
+      background:linear-gradient(transparent 60px, rgb(0, 0, 0));
+      
+
+    }
+
+    .timeline > .section > .article > .content:not(.expanded)::before {
+
+      opacity: 100%;
+
+    }
+
+    .arrow {
+      border: solid rgb(255, 255, 255);
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 7px;
+
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    .arrow.right {
+      transform: rotate(-45deg);
+    }
+    
+    .arrow.left {
+      transform: scaleX(-1) rotate(-45deg); 
+    }
+    
+    .arrow.up {
+      transform: scaleY(-1) rotate(45deg);
+    }
+    
+    .arrow.down {
+      transform: rotate(45deg);
     }
 
   </style>
@@ -122,10 +229,74 @@
   <hr>
   <div class="timeline">
     <div class="section" id="Corso sulla sicurezza">
-      <div class="date"><p>16/9/2009</p></div>
-      <div class="img"><img alt="img"></div>
-      <h2 class="title">Corso sulla Sicurezza</h2>
+      <div class="timebar">
+        <div class="date"> 16/9/2009 </div>
+      </div>
+      <div class="article" onclick="toggleDropdown(this)">
+        <div class="heading">
+          <h3 class="title">Corso sulla Sicurezza</h3>
+          <div class="img"><img alt="img" src="media/code_monsters_1200x890.png"></div>
+        </div>
+        <div class="content">
+          <div>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nostrum illo aperiam optio deleniti saepe eos labore, quibusdam nam quod! Eius maxime adipisci magni accusamus est possimus quidem in eaque?
+          </div>
+        </div>
+        <span class="expand-arrow"><i class="arrow down"></i></span>
+      </div>
+
+    </div>
+    <div class="section" id="Corso sulla sicurezza">
+      <div class="timebar">
+        <div class="date">16/9/2009</div>
+      </div>
+      <div class="article" onclick="toggleDropdown(this)">
+        <div class="heading">      
+          <h3 class="title">Corso sulla Sicurezza</h3>
+          <div class="img"><img alt="img" src="media/the_big_game.png"></div>
+        </div>
+        <div class="content">
+          <div>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nostrum illo aperiam optio deleniti saepe eos labore, quibusdam nam quod! Eius maxime adipisci magni accusamus est possimus quidem in eaque?
+          </div>
+        </div>
+        <span class="expand-arrow"><i class="arrow down"></i></span>
+      </div>
+    </div>
+    <div class="section" id="Corso sulla sicurezza">
+      <div class="timebar">
+        <div class="date"> 16/9/2009 </div>
+      </div>
+      <div class="article">
+        <div class="heading">      
+          <h3 class="title">Corso sulla Sicurezza</h3>
+          <div class="img"><img alt="img" src="media/the_big_game.png"></div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <script>
+    function toggleDropdown(elem) {
+      if(!elem instanceof HTMLElement) return;
+
+      //if present, remove so animation can be played again
+      elem.classList.remove('clicked')
+      elem.style.animation.cancel();
+      
+      elem.classList.add('clicked')
+      setTimeout((elem) => {
+        elem.classList.remove('clicked') //after animation is finished remove
+      },500, elem)
+      const content = elem.querySelectorAll('.content')[0]
+      const arrow = elem.querySelectorAll('.arrow')[0]
+
+      content.classList.toggle('expanded')
+
+      arrow.classList.toggle('up')
+      arrow.classList.toggle('down')
+
+    }
+  </script>
 </body>
 </html>
