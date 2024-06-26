@@ -11,8 +11,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   
   <style>
+
+    :root {
+      --backround-color: rgb(31, 31, 31);
+    }
+
     body{
-      background-color: black;
+      background-color: var(--backround-color);
       color: white;
       font-family:"Roboto",sans-serif;
       text-align: center;
@@ -25,6 +30,7 @@
     h2 {
       padding: 0.5em;
     }
+
     h1,h2,h3,h4,h5,h6 {
       text-shadow: 0px 0px 5px rgb(140, 139, 139);
     }
@@ -65,13 +71,13 @@
 
     @keyframes my-highlight{
       0%{
-        background-color: rgba(255, 255, 255, 0);
+        background-color: rgba(var(--backround-color), 0);
       }
       50% {
         background-color: rgba(255, 255, 255, 0.305);
       }
       100% {
-        background-color: rgba(255, 255, 255, 0);
+        background-color: rgba(var(--backround-color), 0);
       }
     }
 
@@ -111,7 +117,7 @@
       position: absolute;
       height: 20px;
       width: 20px;
-      background-color: black;
+      background-color: var(--backround-color);
       border: solid white 2px;
       border-radius: 200px;
       top:2.5em;
@@ -120,13 +126,13 @@
       margin-left: -12px;
     }
 
-    .timeline >  .section > .article > .heading > .img {
+    .timeline > .section > .article > .heading > .img {
       width: 50%;
       display: flex;
       vertical-align: middle;
     }
 
-    .timeline >  .section > .article > .heading > .img > img {
+    .timeline > .section > .article > .heading > .img > img {
       width: 100%;
       aspect-ratio: 16/9;
       margin: auto;
@@ -136,10 +142,13 @@
     }
 
     @media only screen and (min-width: 500px){
-      .timeline >  .section > .article > .heading > .img > img {
+      
+      .timeline > .section > .article > .heading > .img > img {
         width: unset;
+        max-width: 100%;
         height: 100%;
       }
+
     }
 
     .timeline >  .section > .article > .heading > .title {
@@ -159,12 +168,15 @@
       max-height: 2lh;
       width: 90%;
       transition: max-height 1.5s ease-in-out;
+
+      &.expanded {
+        max-height:200px;
+        overflow: hidden;
+      }
+
     }
 
-    .timeline > .section > .article > .content.expanded {
-      max-height:200px;
-      overflow: hidden;
-    }
+
 
     .timeline > .section > .article > .content > div {
       
@@ -189,7 +201,7 @@
       position:absolute;
       left:0;
       top:0;
-      background:linear-gradient(transparent 60px, rgb(0, 0, 0));
+      background:linear-gradient(transparent 60px, var(--backround-color));
       
 
     }
@@ -207,22 +219,23 @@
       padding: 7px;
 
       transition: transform 0.5s ease-in-out;
-    }
-    
-    .arrow.right {
-      transform: rotate(-45deg);
-    }
-    
-    .arrow.left {
-      transform: scaleX(-1) rotate(-45deg); 
-    }
-    
-    .arrow.up {
-      transform: scaleY(-1) rotate(45deg);
-    }
-    
-    .arrow.down {
-      transform: rotate(45deg);
+          
+      &.right {
+        transform: rotate(-45deg);
+      }
+
+      &.left {
+        transform: scaleX(-1) rotate(-45deg); 
+      }
+
+      &.up {
+        transform: scaleY(-1) rotate(45deg);
+      }
+      
+      &.down {
+        transform: rotate(45deg);
+      }
+
     }
 
   </style>
@@ -279,7 +292,7 @@
       </div>
     </div>
   </div>
-
+  
   <script>
     function toggleDropdown(elem) {
       if(!elem instanceof HTMLElement) return;
