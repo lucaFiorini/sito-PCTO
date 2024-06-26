@@ -55,19 +55,6 @@
       display: flex;
       width: 100%;
     }
-    
-    .timeline > .section > .article {
-      position: relative;
-      display: flex;
-      width: 70%;
-      flex-direction: column;
-      transition: background-color 0.5s ease-in-out;
-      border-radius: 5px;
-      cursor:pointer;
-      border-bottom: rgba(255, 255, 255, 0.097) solid 1px;
-      padding-bottom: 1em;
-      margin-bottom:1em;
-    }
 
     @keyframes my-highlight{
       0%{
@@ -81,8 +68,22 @@
       }
     }
 
-    .timeline > .section > .article.clicked {
-      animation: my-highlight linear 0.5s forwards;
+    .timeline > .section > .article {
+      position: relative;
+      display: flex;
+      width: 70%;
+      flex-direction: column;
+      transition: background-color 0.5s ease-in-out;
+      border-radius: 5px;
+      cursor:pointer;
+      border-bottom: rgba(255, 255, 255, 0.097) solid 1px;
+      padding-bottom: 1em;
+      margin-bottom:1em;
+
+      &.clicked {
+        animation: my-highlight linear 0.5s forwards;
+      }
+
     }
 
     .timeline > .section > .article > .heading {
@@ -130,33 +131,34 @@
       width: 50%;
       display: flex;
       vertical-align: middle;
-    }
 
-    .timeline > .section > .article > .heading > .img > img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      margin: auto;
-      background-color: rgb(15, 47, 74);
-      border-radius: 5px;
+      & img {
 
-    }
+        width: 100%;
+        aspect-ratio: 16/9;
+        margin: auto;
+        background-color: rgb(15, 47, 74);
+        border-radius: 5px;
 
-    @media only screen and (min-width: 500px){
-      
-      .timeline > .section > .article > .heading > .img > img {
-        width: unset;
-        max-width: 100%;
-        height: 100%;
+        @media only screen and (min-width: 500px){
+          
+          width: unset;
+          max-width: 100%;
+          height: 100%;
+
+        }
+
       }
 
     }
 
+
+
     .timeline >  .section > .article > .heading > .title {
       width: 50%;
       text-align: left;
-      padding:0.1em 0.1em 0px 0px;
+      padding:0.1em 0.1em 0px 1em;
       margin:auto 0px auto 0px;
-      padding-left: 0.5em;
     }
 
     .timeline > .section > .article > .content > div > p {
@@ -213,6 +215,7 @@
     }
 
     .arrow {
+      
       border: solid rgb(255, 255, 255);
       border-width: 0 3px 3px 0;
       display: inline-block;
@@ -301,9 +304,11 @@
       elem.classList.remove('clicked')
 
       elem.classList.add('clicked')
+
       setTimeout((elem) => {
         elem.classList.remove('clicked') //after animation is finished remove
       },500, elem)
+
       const content = elem.querySelectorAll('.content')[0]
       const arrow = elem.querySelectorAll('.arrow')[0]
 
