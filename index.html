@@ -75,7 +75,6 @@
       flex-direction: column;
       transition: background-color 0.5s ease-in-out;
       border-radius: 5px;
-      cursor:pointer;
       border-bottom: rgba(255, 255, 255, 0.097) solid 1px;
       padding-bottom: 1em;
       margin-bottom:1em;
@@ -109,6 +108,11 @@
       margin: 0px;
       line-height: 6em;
       text-align: right;
+      & span{
+        line-height: normal;
+        display: inline-block;
+        vertical-align: middle;
+      }
     }
 
     /*Timeline dot*/
@@ -157,7 +161,7 @@
     .timeline >  .section > .article > .heading > .title {
       width: 50%;
       text-align: left;
-      padding:0.1em 0.1em 0px 1em;
+      padding:0.1em 0.1em 0px 0.7em;
       margin:auto 0px auto 0px;
     }
 
@@ -172,7 +176,7 @@
       transition: max-height 1.5s ease-in-out;
 
       &.expanded {
-        max-height:200px;
+        max-height:400px;
         overflow: hidden;
       }
 
@@ -215,10 +219,11 @@
     }
 
     .arrow {
-      
+
       border: solid rgb(255, 255, 255);
       border-width: 0 3px 3px 0;
       display: inline-block;
+      margin-top: 0.4em;
       padding: 7px;
 
       transition: transform 0.5s ease-in-out;
@@ -241,6 +246,11 @@
 
     }
 
+    a {
+      z-index: 1;
+      position: relative;
+    }
+
   </style>
 
 </head>
@@ -248,52 +258,126 @@
   <h1> La mia esperienza PCTO </h1>
   <hr>
   <div class="timeline">
+
     <div class="section" id="Corso sulla sicurezza">
       <div class="timebar">
-        <div class="date"> 16/9/2009 </div>
+        <div class="date"><span>02/9/2009</span> </div>
       </div>
-      <div class="article" onclick="toggleDropdown(this)">
+      <div class="article">
         <div class="heading">
           <h3 class="title">Corso sulla Sicurezza</h3>
           <div class="img"><img alt="img" src="media/code_monsters_1200x890.png"></div>
         </div>
         <div class="content">
           <div>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nostrum illo aperiam optio deleniti saepe eos labore, quibusdam nam quod! Eius maxime adipisci magni accusamus est possimus quidem in eaque?
+            12 ore
           </div>
         </div>
-        <span class="expand-arrow"><i class="arrow down"></i></span>
       </div>
-
     </div>
-    <div class="section" id="Corso sulla sicurezza">
+
+    <div class="section" id="Futuro solare">
       <div class="timebar">
-        <div class="date">16/9/2009</div>
+        <div class="date"><span>16/9/2009</span></div>
       </div>
-      <div class="article" onclick="toggleDropdown(this)">
+      <div class="long article">
         <div class="heading">      
-          <h3 class="title">Corso sulla Sicurezza</h3>
+          <h3 class="title">Futuro Solare</h3>
           <div class="img"><img alt="img" src="media/the_big_game.png"></div>
         </div>
         <div class="content">
           <div>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nostrum illo aperiam optio deleniti saepe eos labore, quibusdam nam quod! Eius maxime adipisci magni accusamus est possimus quidem in eaque?
+            Futuro solare 33 ore.
           </div>
-        </div>
-        <span class="expand-arrow"><i class="arrow down"></i></span>
+        </div>        
       </div>
     </div>
-    <div class="section" id="Corso sulla sicurezza">
+
+    <div class="section" id="Sorint.lab">
+      <div class="timebar">
+        <div class="date"> 16/9/2009 </div>
+      </div>
+      <div class="long article">
+        <div class="heading">      
+          <h3 class="title">Sorint.lab</h3>
+          <div class="img"><img alt="img" src="media/the_big_game.png"></div>
+        </div>
+        <div class="content">
+          <div>
+            Sorint.lab
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="Startup your life">
       <div class="timebar">
         <div class="date"> 16/9/2009 </div>
       </div>
       <div class="article">
         <div class="heading">      
-          <h3 class="title">Corso sulla Sicurezza</h3>
+          <h3 class="title">Startup your life</h3>
           <div class="img"><img alt="img" src="media/the_big_game.png"></div>
+        </div>
+        <div class="content">
+          <div>
+            Startup ya life twat
+          </div>
         </div>
       </div>
     </div>
+    
+    <div class="section" id="Olicyber training camp">
+      <div class="timebar">
+        <div class="date"> Feb 2022 </div>
+      </div>
+      <div class="long article">
+        <div class="heading">      
+          <h3 class="title">Olicyber training camp</h3>
+          <div class="img"><img alt="img" src="media/the_big_game.png"></div>
+        </div>
+        <div class="content">
+          <div>
+            Training camp di cybersicurezza dalla durata di 50 ore presso l'università di Salerno
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="Cyberchallenge">
+      <div class="timebar">
+        <div class="date"> <span> Feb-Giugno 2022 </span> </div>
+      </div>
+      <div class="long article">
+        <div class="heading">      
+          <h3 class="title">Cyberchallenge</h3>
+          <div class="img"><img alt="img" src="media/the_big_game.png"></div>
+        </div>
+        <div class="content">
+          <div>
+            Cyberchallenge presso l'università degli studi di Catania, corso dalla durata di 70 ore + 19 ore di altre attività
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="Erasmus ad A Coruña">
+      <div class="timebar">
+        <div class="date"> Lug-Aug 2023 </div>
+      </div>
+      <div class="long article">
+        <div class="heading">      
+          <h3 class="title">Erasmus ad A Coruña</h3>
+          <div class="img"><img alt="img" src="media/the_big_game.png"></div>
+        </div>
+        <div class="content">
+          <div>
+            Durante un'attività di mobilità internazionale svolta nella città galiziana di A Coruña, ho avuto l'opportunità di sviluppare conoscenze pratiche di web development presso l'azienda Code Monsters . Inizialmente, ho lavorato con un ragazzo toscano, e successivamente, con Enrico Interlandi. La versione del sito da noi realizzata è ancora utilizzata come sito dell'azienda ed è disponibile a questo URL: <a href="https://codemonsters.es">https://codemonsters.es</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   
   <script>
@@ -318,6 +402,27 @@
       arrow.classList.toggle('down')
 
     }
+
+    const arrowHTML = '<span class="expand-arrow"><i class="arrow down"></i></span>';
+
+    document.querySelectorAll('.article').forEach((article) => {
+
+      if(article.classList.contains('long')){
+        article.setAttribute('onclick','toggleDropdown(this)');
+        article.innerHTML+=arrowHTML;
+      } else {
+        let content = article.querySelectorAll('.content')[0];
+        content.classList.add('expanded');
+      }
+
+    });
+    
+    document.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+  });
+
   </script>
 </body>
 </html>
