@@ -14,6 +14,7 @@
 
     :root {
       --backround-color: rgb(31, 31, 31);
+      --secondary-color: rgb(24, 77, 120);
     }
 
     body{
@@ -148,7 +149,7 @@
         width: 100%;
         aspect-ratio: 16/9;
         margin: auto;
-        background-color: rgb(24, 77, 120);
+        background-color: var(--secondary-color);
         border-radius: 5px;
 
         @media only screen and (min-width: 500px){
@@ -259,6 +260,22 @@
       position: relative;
     }
 
+    .footer{
+      height: 3em;
+      background-color: var(--secondary-color);
+      line-height: 3em;
+
+      & a {
+        color:rgb(0, 255, 247);
+      }
+      & a:active {
+        color:rgb(0, 145, 140);
+      }
+    }
+
+    #closing-row{
+      border-top: 2px solid white;
+    }
   </style>
 
 </head>
@@ -380,7 +397,7 @@
         </div>
         <div class="content">
           <div>
-            Durante un'attività di mobilità internazionale svolta nella città galiziana di A Coruña, ho avuto l'opportunità di sviluppare conoscenze pratiche di web development presso l'azienda Code Monsters . Inizialmente, ho lavorato con un ragazzo toscano, e successivamente, con Enrico Interlandi. La versione del sito da noi realizzata è ancora utilizzata come sito dell'azienda ed è disponibile a questo URL: <a href="https://codemonsters.es">https://codemonsters.es</a>.
+            Durante un'attività di mobilità internazionale svolta nella città galiziana di A Coruña, ho avuto l'opportunità di sviluppare conoscenze pratiche di web development presso l'azienda Code Monsters . Inizialmente, ho lavorato con un ragazzo toscano, e successivamente, con Enrico Interlandi. La versione del sito da noi realizzata è ancora utilizzata come sito dell'azienda ed è disponibile a questo URL: <a href="https://codemonsters.es" target="_blank">https://codemonsters.es</a>.
           </div>
         </div>
       </div>
@@ -419,7 +436,8 @@
         </div>
       </div>
     </div>
-
+    <div id="closing-row"><h2> Grazie per la vostra attenzione </h2></div>
+    <div class="footer">Visualizza il codice sorgente su <a href="https://github.com/lucaFiorini/sito-PCTO" target="_blank">GitHub</a>.</div>
   </div>
   
   <script>
