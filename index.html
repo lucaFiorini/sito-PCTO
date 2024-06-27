@@ -108,11 +108,18 @@
       margin: 0px;
       line-height: 6em;
       text-align: right;
+
       & span{
         line-height: normal;
         display: inline-block;
         vertical-align: middle;
+
+        @media only screen and (max-width: 500px){
+          font-size: small;
+        }
+
       }
+
     }
 
     /*Timeline dot*/
@@ -141,7 +148,7 @@
         width: 100%;
         aspect-ratio: 16/9;
         margin: auto;
-        background-color: rgb(15, 47, 74);
+        background-color: rgb(24, 77, 120);
         border-radius: 5px;
 
         @media only screen and (min-width: 500px){
@@ -165,15 +172,14 @@
       margin:auto 0px auto 0px;
     }
 
-    .timeline > .section > .article > .content > div > p {
-      margin:auto
-    }
 
 
     .timeline > .section > .article > .content {
       max-height: 2lh;
       width: 90%;
       transition: max-height 1.5s ease-in-out;
+      padding: 0.5em 0.1em 0.1em 0.1em;
+
 
       &.expanded {
         max-height:400px;
@@ -182,19 +188,21 @@
 
     }
 
-
-
     .timeline > .section > .article > .content > div {
       
       text-align: left;
-      padding: 0.1em;
       margin: auto;
       transition: max-height 1.5s ease-in-out;
       overflow: hidden;
       text-overflow: clip;
       max-height: 100%;
+
+      & p {
+        margin:auto
+      }
       
      }
+
 
     /* text fade out */
     .timeline > .section > .article > .content::before {
@@ -261,50 +269,16 @@
 
     <div class="section" id="Corso sulla sicurezza">
       <div class="timebar">
-        <div class="date"><span>02/9/2009</span> </div>
+        <div class="date"><span>Ottobre 2021</span> </div>
       </div>
       <div class="article">
         <div class="heading">
           <h3 class="title">Corso sulla Sicurezza</h3>
-          <div class="img"><img alt="img" src="media/code_monsters_1200x890.png"></div>
+          <div class="img"><img alt="img" src="media/Corso-Sicurezza-PCTO_WEB.png"></div>
         </div>
         <div class="content">
           <div>
-            12 ore
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section" id="Futuro solare">
-      <div class="timebar">
-        <div class="date"><span>16/9/2009</span></div>
-      </div>
-      <div class="long article">
-        <div class="heading">      
-          <h3 class="title">Futuro Solare</h3>
-          <div class="img"><img alt="img" src="media/the_big_game.png"></div>
-        </div>
-        <div class="content">
-          <div>
-            Futuro solare 33 ore.
-          </div>
-        </div>        
-      </div>
-    </div>
-
-    <div class="section" id="Sorint.lab">
-      <div class="timebar">
-        <div class="date"> 16/9/2009 </div>
-      </div>
-      <div class="long article">
-        <div class="heading">      
-          <h3 class="title">Sorint.lab</h3>
-          <div class="img"><img alt="img" src="media/the_big_game.png"></div>
-        </div>
-        <div class="content">
-          <div>
-            Sorint.lab
+            Corso sulla sicurezza sul lavoro
           </div>
         </div>
       </div>
@@ -312,16 +286,50 @@
 
     <div class="section" id="Startup your life">
       <div class="timebar">
-        <div class="date"> 16/9/2009 </div>
+        <div class="date"> <span>Novembre 2021</span> </div>
       </div>
       <div class="article">
         <div class="heading">      
           <h3 class="title">Startup your life</h3>
-          <div class="img"><img alt="img" src="media/the_big_game.png"></div>
+          <div class="img"><img alt="img" src="media/startup-your-life.png"></div>
         </div>
         <div class="content">
           <div>
-            Startup ya life twat
+            Percorso di Unicredit per la competenza finanziaria.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="Futuro solare">
+      <div class="timebar">
+        <div class="date"><span>2022-2023</span></div>
+      </div>
+      <div class="long article">
+        <div class="heading">      
+          <h3 class="title">Futuro Solare</h3>
+          <div class="img"><img alt="img" src="media/futuro-solare.png"></div>
+        </div>
+        <div class="content">
+          <div>
+            Collaborazione con Futuro Solare per lo sviluppo di un sistema di predizione metereologica in modo da poter simulare le condizioni meteo durante la Global Solar Challenge 2023
+          </div>
+        </div>        
+      </div>
+    </div>
+
+    <div class="section" id="Sorint.lab">
+      <div class="timebar">
+        <div class="date"><span>Ottobre 2023</span></div>
+      </div>
+      <div class="long article">
+        <div class="heading">      
+          <h3 class="title">Premio GF Marilli 2023</h3>
+          <div class="img"><img alt="img" src="media/hackersgen.png"></div>
+        </div>
+        <div class="content">
+          <div>
+            Partecipazione al premio GF Marilli 2023, con la produzione di un sito realizzato in HTML e PHP per permettere di fare ordinazioni al bar della scuola in remoto e tracciarne il corretto andamento.
           </div>
         </div>
       </div>
@@ -329,7 +337,7 @@
     
     <div class="section" id="Olicyber training camp">
       <div class="timebar">
-        <div class="date"> Feb 2022 </div>
+        <div class="date"> <span>Febbraio 2022</span> </div>
       </div>
       <div class="long article">
         <div class="heading">      
@@ -338,7 +346,7 @@
         </div>
         <div class="content">
           <div>
-            Training camp di cybersicurezza dalla durata di 50 ore presso l'università di Salerno
+            Training camp di cybersicurezza organizzato dal CINI dalla durata di 50 ore presso l'università di Salerno.
           </div>
         </div>
       </div>
@@ -346,16 +354,16 @@
 
     <div class="section" id="Cyberchallenge">
       <div class="timebar">
-        <div class="date"> <span> Feb-Giugno 2022 </span> </div>
+        <div class="date"> <span> Febbraio-Giugno 2022 </span> </div>
       </div>
       <div class="long article">
         <div class="heading">      
           <h3 class="title">Cyberchallenge</h3>
-          <div class="img"><img alt="img" src="media/the_big_game.png"></div>
+          <div class="img"><img alt="img" src="media/logo-cyberchallenge.svg"></div>
         </div>
         <div class="content">
           <div>
-            Cyberchallenge presso l'università degli studi di Catania, corso dalla durata di 70 ore + 19 ore di altre attività
+            Cyberchallenge presso l'università degli studi di Catania, corso dalla durata di 72 ore + 17 ore di altre attività.
           </div>
         </div>
       </div>
@@ -363,16 +371,50 @@
 
     <div class="section" id="Erasmus ad A Coruña">
       <div class="timebar">
-        <div class="date"> Lug-Aug 2023 </div>
+        <div class="date"><span>Lug-Aug 2023</span></div>
       </div>
       <div class="long article">
         <div class="heading">      
           <h3 class="title">Erasmus ad A Coruña</h3>
-          <div class="img"><img alt="img" src="media/the_big_game.png"></div>
+          <div class="img"><img alt="img" src="media/code_monsters_1200x890.png"></div>
         </div>
         <div class="content">
           <div>
             Durante un'attività di mobilità internazionale svolta nella città galiziana di A Coruña, ho avuto l'opportunità di sviluppare conoscenze pratiche di web development presso l'azienda Code Monsters . Inizialmente, ho lavorato con un ragazzo toscano, e successivamente, con Enrico Interlandi. La versione del sito da noi realizzata è ancora utilizzata come sito dell'azienda ed è disponibile a questo URL: <a href="https://codemonsters.es">https://codemonsters.es</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="Partecipazione finale nazionale Olicyber 2023">
+      <div class="timebar">
+        <div class="date"><span>Settembre 2023</span></div>
+      </div>
+      <div class="long article">
+        <div class="heading">      
+          <h3 class="title">Partecipazione finale nazionale Olicyber</h3>
+          <div class="img"><img alt="img" src="media/logo-olicyber.6813031d.svg"></div>
+        </div>
+        <div class="content">
+          <div>
+            Partecipazione alla finale nazionale di Olicyber, le olimpiadi nazionali di Cybersicurezza, con altri 100 studenti a livello nazionale presso il campus ITCLO di Torino.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="Partecipazione finale nazionale Olicyber 2024">
+      <div class="timebar">
+        <div class="date"><span>Giugno 2024</span></div>
+      </div>
+      <div class="article">
+        <div class="heading">      
+          <h3 class="title">Partecipazione finale nazionale Olicyber</h3>
+          <div class="img"><img alt="img" src="media/logo-olicyber.6813031d.svg"></div>
+        </div>
+        <div class="content">
+          <div>
+            Partecipazione edizione 2024.
           </div>
         </div>
       </div>
