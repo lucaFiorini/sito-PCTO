@@ -167,6 +167,7 @@ hr {
 
 
 .timeline > .section > .article > .content {
+  /*height: 2lh;*/
   max-height: 2lh;
   width: 90%;
   transition: max-height 1.5s ease-in-out;
@@ -174,6 +175,7 @@ hr {
 
 
   &.expanded {
+    /* height: calc(auto) one day hopefully (it IS on chrome Canary though) https://frontendmasters.com/blog/one-of-the-boss-battles-of-css-is-almost-won-transitioning-to-auto/... */
     max-height:400px;
     overflow: hidden;
   }
