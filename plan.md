@@ -1,8 +1,5 @@
 # Il mio PCTO
 
-## Timeline PCTO (con foto)
+## Timeline PCTO con foto e descrizioni
 
-# Descrizione delle cose
-
-# Pensieri conclusivi
 
