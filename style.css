@@ -166,17 +166,18 @@ hr {
 
 
 
-.timeline > .section > .article > .content {
-  /*height: 2lh;*/
+.timeline > .section > .article > .content { /*commented out code is for future css interpreters when they get implemented*/
   max-height: 2lh;
+  /*height: 2lh;*/
   width: 90%;
   transition: max-height 1.5s ease-in-out;
+  /*transition: height 1.5s ease-in-out;*/
   padding: 0.5em 0.1em 0.1em 0.1em;
 
 
   &.expanded {
-    /* height: calc(auto) one day hopefully (it IS on chrome Canary though) https://frontendmasters.com/blog/one-of-the-boss-battles-of-css-is-almost-won-transitioning-to-auto/... */
     max-height:400px;
+    /* height: calc(auto) one day hopefully (it IS on chrome Canary though) https://frontendmasters.com/blog/one-of-the-boss-battles-of-css-is-almost-won-transitioning-to-auto/... */
     overflow: hidden;
   }
 
