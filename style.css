@@ -166,7 +166,7 @@ hr {
 
 
 
-.timeline > .section > .article > .content { /*commented out code is for future css interpreters when they get implemented*/
+.timeline > .section > .article > .content { /*commented out code is for future css interpreters when transitioning to auto gets implemented more widely*/
   max-height: 2lh;
   /*height: 2lh;*/
   width: 90%;
